@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************** -->
+<!-- Version and date information: -->
+<!-- SFNC type: GenTL -->
+<!-- SFNC version: 1.0.0 -->
+<!-- SFNC release date: 2013-05-06 -->
+<!-- ***************************************** -->
+<RegisterDescription
+  xmlns="http://www.genicam.org/GenApi/Version_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1 http://www.genicam.org/GenApi/GenApiSchema_Version_1_1.xsd"
+  ModelName="IDS_GenTL_Device"
+  VendorName="IDS"
+  ToolTip="IDS Imaging Development Systems GmbH GenTL Device interface"
+  StandardNameSpace="None"
+  SchemaMajorVersion="1" SchemaMinorVersion="1" SchemaSubMinorVersion="0"
+  MajorVersion="1" MinorVersion="0" SubMinorVersion="0"
+  ProductGuid="73A412C5-AA11-4550-83F1-AC170EF9E7E7" VersionGuid="2AB9BE04-AD3B-415B-9DA0-11EE9B3B9BB1">
+  <!-- ***************************************** -->
+  <!-- RootCategory -->
+  <!-- ***************************************** -->
+  <Group Comment="RootCategory">
+    <Category Name="Root" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>DeviceInformation</pFeature>
+      <pFeature>DeviceControl</pFeature>
+      <pFeature>StreamEnumeration</pFeature>
+      <pFeature>customControlChannelMonitor</pFeature>
+      <pFeature>customHeartbeatMonitor</pFeature>
+      <pFeature>customReconnectMonitor</pFeature>
+   </Category>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- SubCategories -->
+  <!-- ***************************************** -->
+  <Group Comment="SubCategories">
+    <Category Name="DeviceInformation" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Category that contains all Device Information features of the Device module.</ToolTip>
+      <Description>Category that contains all Device Information features of the Device module.</Description>
+      <DisplayName>Device Information</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>DeviceID</pFeature>
+      <pFeature>DeviceSerialNumber</pFeature>
+      <pFeature>DeviceUserID</pFeature>
+      <pFeature>DeviceVendorName</pFeature>
+      <pFeature>DeviceModelName</pFeature>
+      <pFeature>DeviceFamilyName</pFeature>
+      <pFeature>DeviceVersion</pFeature>
+      <pFeature>DeviceManufacturerInfo</pFeature>
+      <pFeature>DeviceType</pFeature>
+      <pFeature>DeviceDisplayName</pFeature>
+      <pFeature>DeviceAccessStatus</pFeature>
+      <pFeature>DeviceChunkDataFormat</pFeature>
+      <pFeature>DeviceEventDataFormat</pFeature>
+      <pFeature>GevDeviceIPAddress</pFeature>
+      <pFeature>GevDeviceSubnetMask</pFeature>
+      <pFeature>GevDeviceGateway</pFeature>
+      <pFeature>GevDeviceMACAddress</pFeature>
+      <pFeature>customIsReconnectSupported</pFeature>
+      <pFeature>customDeviceSaveRemoteDescriptionFileToDisk</pFeature>
+      <pFeature>customIsControlChannelRetrySupported</pFeature>
+    </Category>
+    <Category Name="DeviceControl" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Category that contains all Device Control features of the Device module.</ToolTip>
+      <Description>Category that contains all Device Control features of the Device module.</Description>
+      <DisplayName>Device Control</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>DeviceEndianessMechanism</pFeature>
+      <pFeature>customGevMessageChannelSenderInterval</pFeature>
+      <pFeature>customControlChannelNumRetriesOnTimeout</pFeature>
+    </Category>
+    <Category Name="StreamEnumeration" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Category that contains all Stream Enumeration features of the Device module.</ToolTip>
+      <Description>Category that contains all Stream Enumeration features of the Device module.</Description>
+      <DisplayName>Stream Enumeration</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>customStreamCount</pFeature>
+      <pFeature>StreamSelector</pFeature>
+      <pFeature>StreamID</pFeature>
+    </Category>
+    <Category Name="customControlChannelMonitor" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Shows statistical data on the control channel.</ToolTip>
+      <Description>Shows statistical data on the control channel.</Description>
+      <DisplayName>Control Channel Monitor</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>customControlChannelTimeoutCount</pFeature>
+      <pFeature>customControlChannelRejectCount</pFeature>
+      <pFeature>customControlChannelRuntimeStatisticsAvailable</pFeature>
+      <pFeature>customControlChannelReadCount</pFeature>
+      <pFeature>customControlChannelReadRuntimeMean</pFeature>
+      <pFeature>customControlChannelReadRuntimeMin</pFeature>
+      <pFeature>customControlChannelReadRuntimeMax</pFeature>
+      <pFeature>customControlChannelWriteCount</pFeature>
+      <pFeature>customControlChannelWriteRuntimeMean</pFeature>
+      <pFeature>customControlChannelWriteRuntimeMin</pFeature>
+      <pFeature>customControlChannelWriteRuntimeMax</pFeature>
+      <pFeature>customControlChannelRetryOnBusyCount</pFeature>
+      <pFeature>customControlChannelRetryOnTimeoutCount</pFeature>
+    </Category>
+    <Category Name="customHeartbeatMonitor" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Shows some statistical data on the heartbeat.</ToolTip>
+      <Description>Shows some statistical data on the heartbeat.</Description>
+      <DisplayName>Heartbeat Monitor</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>customHeartbeatFailureCount</pFeature>
+      <pFeature>customHeartbeatStatisticsAvailable</pFeature>
+      <pFeature>customHeartbeatCount</pFeature>
+      <pFeature>customHeartbeatSkipCount</pFeature>
+      <pFeature>customHeartbeatIntervalMean</pFeature>
+      <pFeature>customHeartbeatIntervalMin</pFeature>
+      <pFeature>customHeartbeatIntervalMax</pFeature>
+    </Category>
+    <Category Name="customReconnectMonitor" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Shows statistical data on the reconnect feature.</ToolTip>
+      <Description>Shows statistical data on the reconnect feature.</Description>
+      <DisplayName>Reconnect Monitor</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsReconnectSupported</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pFeature>customIsReconnectEnabled</pFeature>
+      <pFeature>customRemoteDeviceDetachmentCount</pFeature>
+      <pFeature>customRemoteDeviceReattachmentCount</pFeature>
+    </Category>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- DeviceInformation -->
+  <!-- ***************************************** -->
+  <Group Comment="DeviceInformation">
+    <StringReg Name="DeviceID" NameSpace="Standard">
+      <!-- Optional element -->
+      <ToolTip>Interface-wide unique identifier of this device.</ToolTip>
+      <Description>Interface-wide unique identifier of this device.
+  Corresponds to the DEVICE_INFO_ID command of DevGetInfo function.
+
+  Deprecated (See DeviceSerialNumber).
+      </Description>
+      <DisplayName>Device ID</DisplayName>
+      <Visibility>Expert</Visibility>
+      <Address>0x0000</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceSerialNumber" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Serial number of the remote device.</ToolTip>
+      <Description>Serial number of the remote device.
+  Corresponds to the "DeviceSerialNumber" feature of the remote device and
+  usually is retrieved via the bootstrap register of the remote device.
+      </Description>
+      <DisplayName>Device Serial Number</DisplayName>
+      <Visibility>Expert</Visibility>
+      <Address>0x0040</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceUserID" NameSpace="Standard">
+      <!-- Optional element -->
+      <ToolTip>User-programmable device identifier of the remote device.</ToolTip>
+      <Description>User-programmable device identifier of the remote device.
+  Corresponds to the DeviceUserID feature of the remote device and
+  usually it is retrieved via the bootstrap register of the remote device.
+      </Description>
+      <DisplayName>Device User ID</DisplayName>
+      <Visibility>Expert</Visibility>
+      <Address>0x0080</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceVendorName" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Name of the remote device vendor.</ToolTip>
+      <Description>Name of the remote device vendor.
+  Corresponds to the DEVICE_INFO_VENDOR command of DevGetInfo function.
+      </Description>
+      <DisplayName>Device Vendor Name</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0100</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceModelName" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Name of the remote device model.</ToolTip>
+      <Description>Name of the remote device model.
+  Corresponds to the DEVICE_INFO_MODEL command of DevGetInfo function.
+      </Description>
+      <DisplayName>Device Model Name</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0140</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceFamilyName" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Name of the product family of the remote device model.</ToolTip>
+      <Description>Name of the product family of the remote device model.
+  Corresponds to the "DeviceFamilyName" feature of the remote device and
+  usually is retrieved via the bootstrap register of the remote device.
+      </Description>
+      <DisplayName>Device Family Name</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <pIsImplemented>customNotIsGEV</pIsImplemented>
+      <Address>0x0180</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceVersion" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>The version of the remote device model.</ToolTip>
+      <Description>The version of the remote device model.
+  Corresponds to the "DeviceVersion" feature of the remote device and
+  usually is retrieved via the bootstrap register of the remote device.
+      </Description>
+      <DisplayName>Device Version</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x01C0</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <StringReg Name="DeviceManufacturerInfo" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Manufacturer information about the remote device.</ToolTip>
+      <Description>Manufacturer information about the remote device.
+  Corresponds to the "DeviceManufacturerInfo" feature of the remote device and
+  usually is retrieved via the bootstrap register of the remote device.
+      </Description>
+      <DisplayName>Device Manufacturer Info</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x0200</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <Enumeration Name="DeviceType" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Transport layer type of the device.</ToolTip>
+      <Description>Transport layer type of the device.
+  Corresponds to the DEVICE_INFO_TYPE command of DevGetInfo function.
+      </Description>
+      <DisplayName>Device Type</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="GigEVision" NameSpace="Standard">
+        <ToolTip>GigE Vision.</ToolTip>
+        <Description>GigE Vision.</Description>
+        <DisplayName>GigE Vision</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="USB3Vision" NameSpace="Standard">
+        <ToolTip>USB3 Vision.</ToolTip>
+        <Description>USB3 Vision.</Description>
+        <DisplayName>USB3 Vision</DisplayName>
+        <Value>4</Value>
+      </EnumEntry>
+      <EnumEntry Name="CustomNXT" NameSpace="Custom">
+        <ToolTip>Custom NXT.</ToolTip>
+        <Description>Custom NXT.</Description>
+        <DisplayName>Custom NXT</DisplayName>
+        <Value>1001</Value>
+      </EnumEntry>
+      <pValue>DeviceTypeReg</pValue>
+    </Enumeration>
+    <IntReg Name="DeviceTypeReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0240</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <IntSwissKnife Name="customIsGEV" NameSpace="Custom">
+      <!-- Custom element -->
+      <pVariable Name="TYP">DeviceTypeReg</pVariable>
+      <Formula>TYP = 0</Formula>
+    </IntSwissKnife>
+    <IntSwissKnife Name="customNotIsGEV" NameSpace="Custom">
+      <!-- Custom element -->
+      <pVariable Name="TYP">DeviceTypeReg</pVariable>
+      <Formula>TYP &lt;&gt; 0</Formula>
+    </IntSwissKnife>
+    <StringReg Name="DeviceDisplayName" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>User readable name of the device.</ToolTip>
+      <Description>User readable name of the device.
+  If this is not defined in the device this should be "VENDOR MODEL (ID)".
+  Corresponds to the DEVICE_INFO_DISPLAYNAME command of DevGetInfo function.
+      </Description>
+      <DisplayName>Device Display Name</DisplayName>
+      <Visibility>Expert</Visibility>
+      <Address>0x0244</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+    </StringReg>
+    <Enumeration Name="DeviceAccessStatus" NameSpace="Standard">
+      <!-- Recommended element -->
+      <ToolTip>Gives the device's access status.</ToolTip>
+      <Description>Gives the device's access status at the moment of the last execution of the DeviceUpdateList command.
+  This value only changes on execution of the DeviceUpdateList command.
+  Corresponds to the DEVICE_INFO_ACCESS_STATUS command of DevGetInfo function.
+      </Description>
+      <DisplayName>Device Access Status</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="Unknown" NameSpace="Standard">
+        <ToolTip>Unknown status.</ToolTip>
+        <Description>Access status is ot known to the Producer.</Description>
+        <DisplayName>Unknown</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="ReadWrite" NameSpace="Standard">
+        <ToolTip>Full access.</ToolTip>
+        <Description>Full access.</Description>
+        <DisplayName>Read Write</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="ReadOnly" NameSpace="Standard">
+        <ToolTip>Read-only access.</ToolTip>
+        <Description>Read-only access.</Description>
+        <DisplayName>Read Only</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="NoAccess" NameSpace="Standard">
+        <ToolTip>Not available to connect.</ToolTip>
+        <Description>Not available to connect.</Description>
+        <DisplayName>No Access</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <EnumEntry Name="Busy" NameSpace="Standard">
+        <ToolTip>The device is already opened by another entity.</ToolTip>
+        <Description>The device is already opened by another entity.</Description>
+        <DisplayName>Busy</DisplayName>
+        <Value>4</Value>
+      </EnumEntry>
+      <EnumEntry Name="OpenReadWrite" NameSpace="Standard">
+        <ToolTip>Open in Read/Write mode by this GenTL host.</ToolTip>
+        <Description>Open in Read/Write mode by this GenTL host.</Description>
+        <DisplayName>Open Read Write</DisplayName>
+        <Value>5</Value>
+      </EnumEntry>
+      <EnumEntry Name="OpenReadOnly" NameSpace="Standard">
+        <ToolTip>Open in Read access mode by this GenTL host.</ToolTip>
+        <Description>Open in Read access mode by this GenTL host.</Description>
+        <DisplayName>Open Read Only</DisplayName>
+        <Value>6</Value>
+      </EnumEntry>
+      <pValue>DeviceAccessStatusReg</pValue>
+    </Enumeration>
+    <IntReg Name="DeviceAccessStatusReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0284</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Enumeration Name="DeviceChunkDataFormat" NameSpace="Standard">
+      <!-- Recommended element -->
+      <!-- NOTE currently not supported! -->
+      <ToolTip>Chunk data format used by the device.</ToolTip>
+      <Description>Chunk data format used by the device.
+  This information allows devices based on other technologies or protocols than "standard" ones
+  such as GigE Vision to inform the GenTL Consumer about the chunk data layout they use.
+
+  Currently not implemented by the IDS GenTL Producer.
+      </Description>
+      <DisplayName>Device Chunk Data Format</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customNo</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="None" NameSpace="Standard">
+        <ToolTip>The device does not use chunk data at all.</ToolTip>
+        <Description>The device does not use chunk data at all.</Description>
+        <DisplayName>None</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="GigEVision" NameSpace="Standard">
+        <ToolTip>Format defined by GigE Vision specification version 1.x.</ToolTip>
+        <Description>The device formats the chunk data using chunk data format defined by
+  GigE Vision specification version 1.x.
+  The chunk data decoding algorithm (chunk adapter) common for
+  the GigE Vision devices can be used.
+        </Description>
+        <DisplayName>GigE Vision</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="Custom" NameSpace="Standard">
+        <ToolTip>Custom, non-standard format.</ToolTip>
+        <Description>The device formats the chunk data using a custom, non-standard format.
+  Without a-priori additional knowledge about the device and its implementation,
+  the GenTL Consumer should always use the generic chunk adapter to decode
+  the chunk data, not making any assumptions about the internal chunk data layout.
+        </Description>
+        <DisplayName>Custom</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <Value>0</Value>
+    </Enumeration>
+    <Enumeration Name="DeviceEventDataFormat" NameSpace="Standard">
+      <!-- Recommended element -->
+      <!-- NOTE currently not supported! -->
+      <ToolTip>Enumeration, informing about the event data format used by the device.</ToolTip>
+      <Description>Enumeration, informing about the event data format used by the device
+  (meaning the "device events", see event type EVENT_REMOTE_DEVICE).
+  This allows devices based on other technologies or protocols than "standard" ones
+  such as GigE Vision to inform the GenTL Consumer about the event data layout they use.
+
+  Currently not implemented by the IDS GenTL producer.
+      </Description>
+      <DisplayName>Device Event Data Format</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customNo</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <EnumEntry Name="None" NameSpace="Standard">
+        <ToolTip>The device does not use event data at all.</ToolTip>
+        <Description>The device does not use event data at all.</Description>
+        <DisplayName>None</DisplayName>
+        <Value>0</Value>
+      </EnumEntry>
+      <EnumEntry Name="GigEVision" NameSpace="Standard">
+        <ToolTip>Format defined by GigE Vision specification version 1.x.</ToolTip>
+        <Description>The device formats the event data using event data format defined by
+  GigE Vision specification version 1.x.
+  The event data decoding algorithm (event adapter) common for the
+  GigE Vision devices can be used.
+        </Description>
+        <DisplayName>GigE Vision</DisplayName>
+        <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="GigEVisionExtendedId" NameSpace="Standard">
+        <ToolTip>Format defined by GigE Vision specification version 2.x.</ToolTip>
+        <Description>The device formats the event data using event data format defined by
+  GigE Vision specification version 2.x.
+  The event data decoding algorithm (event adapter) common for the
+  GigE Vision devices can be used.
+        </Description>
+        <DisplayName>GigE Vision Extended ID</DisplayName>
+        <Value>2</Value>
+      </EnumEntry>
+      <EnumEntry Name="Custom" NameSpace="Standard">
+        <ToolTip>Custom, non-standard format.</ToolTip>
+        <Description>The device formats the event data using a custom, non-standard format.
+  Without a-priori additional knowledge about the device and its implementation,
+  the GenTL Consumer should always use the generic event adapter to decode
+  the event data, not making any assumptions about the internal event data layout.
+        </Description>
+        <DisplayName>Custom</DisplayName>
+        <Value>3</Value>
+      </EnumEntry>
+      <Value>0</Value>
+    </Enumeration>
+    <Integer Name="GevDeviceIPAddress" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Current IP address of the GVCP interface of the remote device.</ToolTip>
+      <Description>Current IP address of the GVCP interface of the remote device.</Description>
+      <DisplayName>Gev Device IP Address</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>GevDeviceIPAddressReg</pValue>
+    </Integer>
+    <IntReg Name="GevDeviceIPAddressReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0290</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>IPV4Address</Representation>
+    </IntReg>
+    <Integer Name="GevDeviceSubnetMask" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Current subnet mask of the GVCP interface of the remote device.</ToolTip>
+      <Description>Current subnet mask of the GVCP interface of the remote device.</Description>
+      <DisplayName>Gev Device Subnet Mask</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>GevDeviceSubnetMaskReg</pValue>
+    </Integer>
+    <IntReg Name="GevDeviceSubnetMaskReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0294</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>IPV4Address</Representation>
+    </IntReg>
+    <Integer Name="GevDeviceGateway" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Current gateway IP address of the GVCP interface of the remote device.</ToolTip>
+      <Description>Current gateway IP address of the GVCP interface of the remote device.</Description>
+      <DisplayName>Gev Device Gateway</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>GevDeviceGatewayReg</pValue>
+    </Integer>
+    <IntReg Name="GevDeviceGatewayReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0298</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>IPV4Address</Representation>
+    </IntReg>
+    <Integer Name="GevDeviceMACAddress" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>48-bit MAC address of the GVCP interface of the remote device.</ToolTip>
+      <Description>48-bit MAC address of the GVCP interface of the remote device.</Description>
+      <DisplayName>Gev Device MAC Address</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>GevDeviceMACAddressReg</pValue>
+    </Integer>
+    <IntReg Name="GevDeviceMACAddressReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0288</Address>
+      <Length>6</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>MACAddress</Representation>
+    </IntReg>
+    <Boolean Name="customIsReconnectSupported" NameSpace="Custom">
+        <!-- Custom element -->
+        <ToolTip>Reconnect feature availability.</ToolTip>
+        <Description>Flag indicating whether the reconnect feature is supported or not.</Description>
+        <DisplayName>Reconnect Avl</DisplayName>
+        <Visibility>Invisible</Visibility>
+        <ImposedAccessMode>RO</ImposedAccessMode>
+        <pValue>customIsReconnectSupportedReg</pValue>
+        <OnValue>1</OnValue>
+        <OffValue>0</OffValue>
+    </Boolean>
+    <IntReg Name="customIsReconnectSupportedReg" NameSpace="Custom">
+        <Visibility>Invisible</Visibility>
+        <Address>0x438</Address>
+        <Length>1</Length>
+        <AccessMode>RO</AccessMode>
+        <pPort>DevicePort</pPort>
+        <Sign>Unsigned</Sign>
+        <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Command Name="customDeviceSaveRemoteDescriptionFileToDisk" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Saves the remote device description file (xml file) to disk.</ToolTip>
+      <Description>Saves the remote device description file (xml file)
+  to the root of the current user's home directory.
+  The name is taken from the URL string. The original file format (xml/zip) is retained.
+  Note: The function saves only the first announced "local" storage file.
+  Note: If the implementation fails to determine the home directory
+      it tries to save the file to the application's working directory.
+      </Description>
+      <DisplayName>Save Remote XML File</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>WO</ImposedAccessMode>
+      <pValue>customDeviceSaveRemoteDescriptionFileToDiskReg</pValue>
+      <CommandValue>1</CommandValue>
+    </Command>
+    <IntReg Name="customDeviceSaveRemoteDescriptionFileToDiskReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x03E4</Address>
+      <Length>4</Length>
+      <AccessMode>WO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Signed</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Boolean Name="customIsControlChannelRetrySupported" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Control channel retry support.</ToolTip>
+      <Description>Flag indicating whether the control channel retries are supported or not.</Description>
+      <DisplayName>Control Channel Retry Supported</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customIsControlChannelRetrySupportedReg</pValue>
+      <OnValue>1</OnValue>
+      <OffValue>0</OffValue>
+    </Boolean>
+    <IntReg Name="customIsControlChannelRetrySupportedReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0448</Address>
+      <Length>1</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- DeviceControl -->
+  <!-- ***************************************** -->
+    <Group Comment="DeviceControl">
+        <Enumeration Name="DeviceEndianessMechanism" NameSpace="Standard">
+            <!-- Recommended element -->
+            <!-- NOTE currently not supported! -->
+            <ToolTip>Identifies the endianess handling mode.</ToolTip>
+            <Description>Identifies the endianess handling mode.
+
+  Currently not implemented by the IDS GenTL Producer.
+            </Description>
+            <DisplayName>Device Endianess Mechanism</DisplayName>
+            <Visibility>Expert</Visibility>
+            <pIsImplemented>customNo</pIsImplemented>
+            <ImposedAccessMode>RW</ImposedAccessMode>
+            <EnumEntry Name="Legacy" NameSpace="Standard">
+                <ToolTip>GenICam Schema 1.0.</ToolTip>
+                <Description>Handling the device endianess according to GenICam Schema 1.0.</Description>
+                <DisplayName>Legacy</DisplayName>
+                <Value>0</Value>
+            </EnumEntry>
+            <EnumEntry Name="Standard" NameSpace="Standard">
+                <ToolTip>GenICam Schema 1.1 and later.</ToolTip>
+                <Description>Handling the device endianess according to GenICam Schema 1.1 and later.</Description>
+                <DisplayName>Standard</DisplayName>
+                <Value>1</Value>
+            </EnumEntry>
+            <Value>0</Value>
+        </Enumeration>
+        <Integer Name="LinkCommandTimeout" NameSpace="Standard">
+            <!-- Recommended element -->
+            <!-- NOTE currently not supported! -->
+            <ToolTip>Application timeout for the control channel communication.</ToolTip>
+            <Description>Specifies the application timeout for the control channel communication.
+  This feature defines the application timeout, and it is related to
+  the device feature DeviceLinkCommandTimeout specifying the maximum time
+  for handling a command in the device.
+  Up to LinkCommandRetryCount attempts with this timeout are made
+  before a command fails with a timout error.
+
+  Currently not implemented by the IDS GenTL Producer.
+            </Description>
+            <DisplayName>Link Command Timeout</DisplayName>
+            <Visibility>Guru</Visibility>
+            <pIsImplemented>customNo</pIsImplemented>
+            <ImposedAccessMode>RW</ImposedAccessMode>
+            <Value>0</Value>
+            <Unit>ns</Unit>
+        </Integer>
+        <Integer Name="LinkCommandRetryCount" NameSpace="Standard">
+            <!-- Recommended element -->
+            <!-- NOTE currently not supported! -->
+            <ToolTip>Maximum number of tries before failing a control channel command.</ToolTip>
+            <Description>Specifies the maximum number of tries before failing a control channel command.
+
+  Currently not implemented by the IDS GenTL Producer.
+            </Description>
+            <DisplayName>Link Command Retry Count</DisplayName>
+            <Visibility>Guru</Visibility>
+            <pIsImplemented>customNo</pIsImplemented>
+            <ImposedAccessMode>RW</ImposedAccessMode>
+            <Value>0</Value>
+        </Integer>
+        <Integer Name="customGevMessageChannelSenderInterval" NameSpace="Custom">
+            <!-- Custom element -->
+            <ToolTip>Specifies the interval (in ms) at which the host sends data to the device.</ToolTip>
+            <Description>Specifies the interval (in ms) at which the host sends data to the device to prevent that a firewall blocks the communication on the message channel.
+  If Gev Message Channel Sender Interval is set to 0, no data is sent to the device.
+            </Description>
+            <DisplayName>Gev Message Channel Sender Interval</DisplayName>
+            <Visibility>Expert</Visibility>
+            <pIsImplemented>customIsGEV</pIsImplemented>
+            <pIsAvailable>customIsGevMessageChannelSenderAvailable</pIsAvailable>
+            <ImposedAccessMode>RW</ImposedAccessMode>
+            <pValue>customGevMessageChannelSenderIntervalReg</pValue>
+            <Inc>100</Inc>
+            <Unit>ms</Unit>
+        </Integer>
+        <IntReg Name="customGevMessageChannelSenderIntervalReg" NameSpace="Custom">
+            <Visibility>Invisible</Visibility>
+            <Address>0x03E8</Address>
+            <Length>4</Length>
+            <AccessMode>RW</AccessMode>
+            <pPort>DevicePort</pPort>
+            <Sign>Unsigned</Sign>
+            <Endianess>LittleEndian</Endianess>
+        </IntReg>
+        <IntReg Name="customIsGevMessageChannelSenderAvailable" NameSpace="Custom">
+            <Visibility>Invisible</Visibility>
+            <Address>0x03EC</Address>
+            <Length>4</Length>
+            <AccessMode>RO</AccessMode>
+            <pPort>DevicePort</pPort>
+            <Sign>Unsigned</Sign>
+            <Endianess>LittleEndian</Endianess>
+        </IntReg>
+        <Integer Name="customControlChannelNumRetriesOnTimeout" NameSpace="Custom">
+            <!-- Custom element -->
+            <ToolTip>Specifies the maximum number of control channel command retries in response to ack timeout.</ToolTip>
+            <Description>Specifies the maximum number of control channel command retries in response to ack timeout.</Description>
+            <DisplayName>Control Channel Num Retries On Timeout</DisplayName>
+            <Visibility>Expert</Visibility>
+            <pIsImplemented>customIsControlChannelRetrySupported</pIsImplemented>
+            <ImposedAccessMode>RW</ImposedAccessMode>
+            <pValue>customControlChannelNumRetriesOnTimeoutReg</pValue>
+            <Min>0</Min>
+            <Max>3</Max>
+            <Inc>1</Inc>
+        </Integer>
+        <IntReg Name="customControlChannelNumRetriesOnTimeoutReg" NameSpace="Custom">
+            <Visibility>Invisible</Visibility>
+            <Address>0x0454</Address>
+            <Length>4</Length>
+            <AccessMode>RW</AccessMode>
+            <pPort>DevicePort</pPort>
+            <Sign>Unsigned</Sign>
+            <Endianess>LittleEndian</Endianess>
+        </IntReg>
+    </Group>
+  <!-- ***************************************** -->
+  <!-- StreamEnumeration -->
+  <!-- ***************************************** -->
+  <Group Comment="StreamEnumeration">
+    <Integer Name="customStreamCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of streams provided by this device.</ToolTip>
+      <Description>Number of streams provided by this device.</Description>
+      <DisplayName>Stream Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customStreamCountReg</pValue>
+    </Integer>
+    <IntReg Name="customStreamCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x029C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <IntSwissKnife Name="customStreamIndexMaxFunc" NameSpace="Custom">
+      <!-- Custom element -->
+      <pVariable Name="CNT">customStreamCountReg</pVariable>
+      <Formula>CNT - 1</Formula>
+    </IntSwissKnife>
+    <Integer Name="StreamSelector" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Selector for the different stream channels.</ToolTip>
+      <Description>Selector for the different stream channels.
+  The selector is 0-based in order to match the index of the C interface.
+      </Description>
+      <DisplayName>Stream Selector</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+      <pValue>customStreamSelectorReg</pValue>
+      <Min>0</Min>
+      <pMax>customStreamIndexMaxFunc</pMax>
+      <Inc>1</Inc>
+      <pSelected>StreamID</pSelected>
+    </Integer>
+    <IntReg Name="customStreamSelectorReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x02A0</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <StringReg Name="StreamID" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>Device unique ID for the stream.</ToolTip>
+      <Description>Device unique ID for the stream.
+  Corresponds to the DevGetDataStreamID function with the index corresponding to "StreamSelector".
+      </Description>
+      <DisplayName>Stream ID</DisplayName>
+      <Visibility>Beginner</Visibility>
+      <Address>0x02A4</Address>
+      <Length>64</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customStreamSelectorReg</pInvalidator>
+    </StringReg>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- customControlChannelMonitor -->
+  <!-- ***************************************** -->
+  <Group Comment="customControlChannelMonitor">
+    <Integer Name="customControlChannelTimeoutCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel timeouts.</ToolTip>
+      <Description>Number of control channel timeouts since the device was opened.</Description>
+      <DisplayName>Control Channel Timeouts</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelTimeoutCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelTimeoutCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x03F0</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelRejectCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel rejects.</ToolTip>
+      <Description>Number of control channel rejects since the device was opened.</Description>
+      <DisplayName>Control Channel Rejects</DisplayName>
+      <Visibility>Expert</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelRejectCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelRejectCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x03F4</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Boolean Name="customControlChannelRuntimeStatisticsAvailable" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Control channel runtime statistics availability.</ToolTip>
+      <Description>Flag indicating whether the control channel runtime statistics are available or not.</Description>
+      <DisplayName>Control Channel Runtime Statistics Avl</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelRuntimeStatisticsAvailableReg</pValue>
+      <OnValue>1</OnValue>
+      <OffValue>0</OffValue>
+    </Boolean>
+    <IntReg Name="customControlChannelRuntimeStatisticsAvailableReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x03F8</Address>
+      <Length>1</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelReadCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel reads commands.</ToolTip>
+      <Description>Number of control channel read commands since the device was opened.
+  (Only acknowledged commands considered.)
+    </Description>
+      <DisplayName>Control Channel Read Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelReadCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelReadCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x03FC</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelReadRuntimeMean" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Mean runtime (in ms) of control channel read commands.</ToolTip>
+      <Description>Mean runtime (in ms) of control channel read commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Read Runtime Mean</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelReadRuntimeMeanReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelReadRuntimeMeanReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0400</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelReadCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelReadRuntimeMin" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Minimum runtime (in ms) of control channel read commands.</ToolTip>
+      <Description>Minimum runtime (in ms) of control channel read commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Read Runtime Min</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelReadRuntimeMinReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelReadRuntimeMinReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0404</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelReadCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelReadRuntimeMax" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Maximum runtime (in ms) of control channel read commands.</ToolTip>
+      <Description>Maximum runtime (in ms) of control channel read commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Read Runtime Max</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelReadRuntimeMaxReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelReadRuntimeMaxReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0408</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelReadCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelWriteCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel write commands.</ToolTip>
+      <Description>Number of control channel write commands since the device was opened.
+  (Only acknowledged commands considered.)
+    </Description>
+      <DisplayName>Control Channel Write Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelWriteCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelWriteCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x040C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelWriteRuntimeMean" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Mean runtime (in ms) of control channel write commands.</ToolTip>
+      <Description>Mean runtime (in ms) of control channel write commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Write Runtime Mean</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelWriteRuntimeMeanReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelWriteRuntimeMeanReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0410</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelWriteCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelWriteRuntimeMin" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Minimum runtime (in ms) of control channel write commands.</ToolTip>
+      <Description>Minimum runtime (in ms) of control channel write commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Write Runtime Min</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelWriteRuntimeMinReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelWriteRuntimeMinReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0414</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelWriteCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelWriteRuntimeMax" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Maximum runtime (in ms) of control channel write commands.</ToolTip>
+      <Description>Maximum runtime (in ms) of control channel write commands since the device was opened.
+  The runtime is the time between sending the command and receiving the acknoledgement.
+    </Description>
+      <DisplayName>Control Channel Write Runtime Max</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsAvailable>customControlChannelRuntimeStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelWriteRuntimeMaxReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelWriteRuntimeMaxReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0418</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customControlChannelWriteCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelRetryOnBusyCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel retries in response to 'busy' acks.</ToolTip>
+      <Description>Number of control channel retries in response to 'busy' acks since the device was opened.</Description>
+      <DisplayName>Control Channel Retry On Busy Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsControlChannelRetrySupported</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelRetryOnBusyCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelRetryOnBusyCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x044C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customControlChannelRetryOnTimeoutCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of control channel retries in response to ack timeouts.</ToolTip>
+      <Description>Number of control channel retries in response to ack timeouts since the device was opened.</Description>
+      <DisplayName>Control Channel Retry On Timeout Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsControlChannelRetrySupported</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customControlChannelRetryOnTimeoutCountReg</pValue>
+    </Integer>
+    <IntReg Name="customControlChannelRetryOnTimeoutCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0450</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- customHeartbeatMonitor -->
+  <!-- ***************************************** -->
+  <Group Comment="customHeartbeatMonitor">
+    <Integer Name="customHeartbeatFailureCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of failed heartbeat transmissions.</ToolTip>
+      <Description>Number of failed heartbeat transmissions since the device was opened.</Description>
+      <DisplayName>Heartbeat Failures</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatFailureCountReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatFailureCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x041C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Boolean Name="customHeartbeatStatisticsAvailable" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Heartbeat statistics availability.</ToolTip>
+      <Description>Flag indicating whether the heartbeat statistics are available or not.</Description>
+      <DisplayName>Heartbeat Statistics Avl</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatStatisticsAvailableReg</pValue>
+      <OnValue>1</OnValue>
+      <OffValue>0</OffValue>
+    </Boolean>
+    <IntReg Name="customHeartbeatStatisticsAvailableReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0420</Address>
+      <Length>1</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customHeartbeatCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of heartbeat transmissions.</ToolTip>
+      <Description>Number of heartbeat transmissions since the device was opened.
+  (Failures included. Skips not included.)
+    </Description>
+      <DisplayName>Heartbeat Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <pIsAvailable>customHeartbeatStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatCountReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0424</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customHeartbeatSkipCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of skipped heartbeat transmissions.</ToolTip>
+      <Description>Number of heartbeat transmissions that were skipped due to heartbeat timer inaccuracy.
+  Since the device was opened.
+    </Description>
+      <DisplayName>Heartbeat Skip Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <pIsAvailable>customHeartbeatStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatSkipCountReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatSkipCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0434</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customHeartbeatIntervalMean" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Mean heartbeat transmission interval.</ToolTip>
+      <Description>Mean heartbeat transmission interval since the device was opened.
+  (Failures included. Skips not included.)
+    </Description>
+      <DisplayName>Heartbeat Interval Mean</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <pIsAvailable>customHeartbeatStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatIntervalMeanReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatIntervalMeanReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0428</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customHeartbeatCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customHeartbeatIntervalMin" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Minimum heartbeat transmission interval.</ToolTip>
+      <Description>Minimum heartbeat transmission interval since the device was opened.
+  (Failures included. Skips not included.)
+    </Description>
+      <DisplayName>Heartbeat Interval Min</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <pIsAvailable>customHeartbeatStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatIntervalMinReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatIntervalMinReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x042C</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customHeartbeatCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customHeartbeatIntervalMax" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Maximum heartbeat transmission interval.</ToolTip>
+      <Description>Maximum heartbeat transmission interval since the device was opened.
+  (Failures included. Skips not included.)
+    </Description>
+      <DisplayName>Heartbeat Interval Max</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsGEV</pIsImplemented>
+      <pIsAvailable>customHeartbeatStatisticsAvailable</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customHeartbeatIntervalMaxReg</pValue>
+    </Integer>
+    <IntReg Name="customHeartbeatIntervalMaxReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x0430</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <pInvalidator>customHeartbeatCountReg</pInvalidator>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- customHeartbeatMonitor -->
+  <!-- ***************************************** -->
+  <Group Comment="customReconnectMonitor">
+    <Boolean Name="customIsReconnectEnabled" NameSpace="Custom">
+        <!-- Custom element -->
+        <ToolTip>Reconnect feature enabled status.</ToolTip>
+        <Description>Flag indicating whether the reconnect feature is enabled or not.
+  (The reconnect feature is enabled via the corresponding System node.)</Description>
+        <DisplayName>Reconnect Enabled</DisplayName>
+        <Visibility>Expert</Visibility>
+        <pIsImplemented>customIsReconnectSupported</pIsImplemented>
+        <ImposedAccessMode>RO</ImposedAccessMode>
+        <pValue>customIsReconnectEnabledReg</pValue>
+        <OnValue>1</OnValue>
+        <OffValue>0</OffValue>
+    </Boolean>
+    <IntReg Name="customIsReconnectEnabledReg" NameSpace="Custom">
+        <Visibility>Invisible</Visibility>
+        <Address>0x43C</Address>
+        <Length>1</Length>
+        <AccessMode>RO</AccessMode>
+        <pPort>DevicePort</pPort>
+        <Cachable>NoCache</Cachable>
+        <PollingTime>1000</PollingTime>
+        <Sign>Unsigned</Sign>
+        <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customRemoteDeviceDetachmentCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of remote device detachments.</ToolTip>
+      <Description>Number of remote device detachments since the device was opened.</Description>
+      <DisplayName>Remote Device Detachment Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsReconnectSupported</pIsImplemented>
+      <pIsAvailable>customIsReconnectEnabled</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customRemoteDeviceDetachmentCountReg</pValue>
+    </Integer>
+    <IntReg Name="customRemoteDeviceDetachmentCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x440</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+    <Integer Name="customRemoteDeviceReattachmentCount" NameSpace="Custom">
+      <!-- Custom element -->
+      <ToolTip>Number of remote device re-attachments.</ToolTip>
+      <Description>Number of remote device re-attachments since the device was opened.</Description>
+      <DisplayName>Remote Device Re-attachment Count</DisplayName>
+      <Visibility>Expert</Visibility>
+      <pIsImplemented>customIsReconnectSupported</pIsImplemented>
+      <pIsAvailable>customIsReconnectEnabled</pIsAvailable>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <pValue>customRemoteDeviceReattachmentCountReg</pValue>
+    </Integer>
+    <IntReg Name="customRemoteDeviceReattachmentCountReg" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <Address>0x444</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>DevicePort</pPort>
+      <Cachable>NoCache</Cachable>
+      <PollingTime>1000</PollingTime>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+    </IntReg>
+  </Group>
+  <!-- ***************************************** -->
+  <!-- SpecialFeatures -->
+  <!-- ***************************************** -->
+  <Group Comment="SpecialFeatures">
+    <Port Name="DevicePort" NameSpace="Standard">
+      <!-- Mandatory element -->
+      <ToolTip>The GenICam port through which the Device module is accessed.</ToolTip>
+      <Description>The GenICam port through which the Device module is accessed.</Description>
+      <DisplayName>Device Port</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RW</ImposedAccessMode>
+    </Port>
+    <Integer Name="customNo" NameSpace="Custom">
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>0</Value>
+    </Integer>
+  </Group>
+</RegisterDescription>
